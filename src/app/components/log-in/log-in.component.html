@@ -1,0 +1,52 @@
+<div id="back">
+  <div class="backRight"></div>
+  <div class="backLeft"></div>
+</div>
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="right">
+      <div class="content">
+        <div class="form-structor">
+          <div class="signup">
+            <h2 class="form-title" id="signup"><b>Iniciar Sesion</b></h2>
+            <div class="form-holder">
+              <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Username
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-form-field>
+                    <mat-label>Enter your User</mat-label>
+                    <input matInput placeholder="admin" #user>
+                  </mat-form-field>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Password
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput placeholder="****" [type]="hide ? 'password' : 'text'" #pass>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+            <button class="submit-btn" (click)="Login(user,pass)">Log in</button>
+          </div>
+          <div class="login slide-up">
+            <div class="center">
+              <h2 class="form-title" id="login">or <b><a [routerLink]="'/main/G'">Invitado</a></b></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
