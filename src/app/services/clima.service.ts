@@ -9,7 +9,7 @@ import {formatDate} from '@angular/common';
   providedIn: 'root'
 })
 export class ClimaService {
-  apiURL = 'http://api.weatherapi.com/v1';
+  apiURL = 'https://api.weatherapi.com/v1';
 
   constructor(private http: HttpClient) { }
 

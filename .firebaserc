@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wannan-bd1": {
+      "hosting": {
+        "bd1": [
+          "wannan-bd1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wannan-bd1"
+  }
+}

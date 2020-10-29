@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "wannan-bd1",
+    "public": "dist/bd1",
+    "ignore": [
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

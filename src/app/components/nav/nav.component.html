@@ -1,5 +1,27 @@
+<mat-toolbar color="primary" class="text-light" style="background: #000000;">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    </button>
+    <h1>BD1</h1>
+    <span class="example-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/accounts'"> DASHBOARD </a>
+      <a mat-button [routerLink]="'/create-account'">PAISES</a>
+      <a mat-button [routerLink]="'/contacts'">ENCUESTAS</a>
+      <a mat-button [routerLink]="'/'">LOGOUT</a>
+      <a mat-button [routerLink]="'/create-activity'" [hidden]="!admin">ADMINISTRACION</a>
+
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span style="font-size: 20px;">UNIVERSIDAD DE SAN CARLOS DE GUATEMALA</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === true">
@@ -29,6 +51,8 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
+
+    <!--
     <mat-toolbar class="text-light" style="background: #000000;">
       <button
         type="button"
@@ -53,7 +77,7 @@
         <mat-icon>share</mat-icon>
       </button>
 
-    </mat-toolbar>
+    </mat-toolbar>-->
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
