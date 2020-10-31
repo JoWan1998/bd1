@@ -1,8 +1,8 @@
 {
   "hosting": {
-    "site": "wannan-bd1",
     "public": "dist/bd1",
     "ignore": [
+      "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
