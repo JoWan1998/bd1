@@ -62,6 +62,14 @@ import { PaisComponent } from './crud/pais/pais.component';
 import { RegionComponent } from './crud/region/region.component';
 import { InventorComponent } from './crud/inventor/inventor.component';
 import { AreaComponent } from './crud/area/area.component';
+import { ConsultasComponent } from './components/consultas/consultas.component';
+import { Card1Component } from './components/card1/card1.component';
+import { Card2Component } from './components/card2/card2.component';
+import { Card3Component } from './components/card3/card3.component';
+import { MiniCardComponent } from './components/mini-card/mini-card.component';
+import { CardvComponent } from './components/cardv/cardv.component';
+import { CardlistComponent } from './components/cardlist/cardlist.component';
+import { WeatherV1Component } from './components/weather-v1/weather-v1.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +109,15 @@ import { AreaComponent } from './crud/area/area.component';
     PaisComponent,
     RegionComponent,
     InventorComponent,
-    AreaComponent
+    AreaComponent,
+    ConsultasComponent,
+    Card1Component,
+    Card2Component,
+    Card3Component,
+    MiniCardComponent,
+    CardvComponent,
+    CardlistComponent,
+    WeatherV1Component
   ],
   imports: [
     BrowserModule,

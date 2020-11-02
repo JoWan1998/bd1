@@ -1,0 +1,13 @@
+<div class="recipe-card">
+  <aside>
+    <img [src]="image" alt="consultas" />
+  </aside>
+  <article>
+    <h2>
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip>{{title}}</mat-chip>
+      </mat-chip-list>
+    </h2>
+    <ng-content></ng-content>
+  </article>
+</div>

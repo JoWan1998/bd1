@@ -1,68 +1,14 @@
-@media (min-width: 576px) {
-
+.chartContainer canvas {
+  width: auto;
+  height: auto;
 }
 
-
-@media (min-width: 768px) {
-  .chartContainer canvas {
-    max-height: 300px;
-    max-width: 900px;
-    min-width: 300px;
-    min-height: 300px;
-    width: auto;
-    height: auto;
-  }
-
-  .chartContainer{
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.chartContainer{
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-
-@media (min-width: 992px) {
-  .chartContainer canvas {
-    max-height: 300px;
-    max-width: 900px;
-    min-width: 300px;
-    min-height: 300px;
-    width: auto;
-    height: auto;
-  }
-
-  .chartContainer{
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-
-@media (min-width: 1200px) {
-  .chartContainer canvas {
-    max-height: 300px;
-    max-width: 900px;
-    min-width: 300px;
-    min-height: 300px;
-    width: auto;
-    height: auto;
-  }
-
-  .chartContainer{
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 

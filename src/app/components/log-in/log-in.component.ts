@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {MatAccordion} from '@angular/material/expansion';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatFormField} from '@angular/material/form-field';
-import {MatInput} from '@angular/material/input';
 import {Router} from '@angular/router';
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
   selector: 'app-log-in',
@@ -12,23 +11,35 @@ import {Router} from '@angular/router';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  @ViewChild(MatAccordion) accordion: MatAccordion;
-  email = new FormControl('', [Validators.required, Validators.nullValidator]);
-  passd = new FormControl('', [Validators.required, Validators.nullValidator]);
-  hide = true;
+  // tslint:disable-next-line:variable-name
+  private _success = new Subject<string>();
+  staticAlertClosed = false;
+  successMessage = '';
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    setTimeout(() => this.staticAlertClosed = true, 20000);
+
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(
+      debounceTime(5000)
+    ).subscribe(() => this.successMessage = '');
   }
 
+  // tslint:disable-next-line:typedef
   Login(user, pass) {
     // tslint:disable-next-line:triple-equals
     if (user.value == 'admin' && pass.value == 'admin')
     {
-      this.router.navigate(['/main/A']);
+      this.router.navigate(['/Menu']);
     }
     else {
-      this.router.navigate(['/main/G']);
+      this.changeSuccessMessage();
     }
+  }
+  // tslint:disable-next-line:typedef
+  public changeSuccessMessage() {
+    this._success.next(`Datos Incorrectos. ¡Vuelve a Intentarlo!`);
   }
 }

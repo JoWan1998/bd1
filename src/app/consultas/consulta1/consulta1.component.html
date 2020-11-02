@@ -1,31 +1,33 @@
-<table class="table">
-  <thead class="thead-dark">
-  <tr style="font-size: 15px;">
-    <th scope="col">#</th>
-    <th scope="col">Profesional</th>
-    <th scope="col">Inventos Asignados</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let country of countries" style="font-size: 15px;">
-    <th scope="row">{{ country.id }}</th>
-    <td>
-      {{ country.PROFESIONAL }}
-    </td>
-    <td>{{ country.INVENTOS_ASIGNADOS | number}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="example-container">
+  <table mat-table [dataSource]="COUNTRIES">
 
-<div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="tam" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
-  </ngb-pagination>
+    <!-- Id Column -->
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef> No </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
 
-  <label>
-    <select class="custom-select bg-info" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
-      <option [ngValue]="3">3</option>
-      <option [ngValue]="4">4</option>
-    </select>
-  </label>
+    <!-- Name Column -->
+    <ng-container matColumnDef="Profesional">
+      <th mat-header-cell *matHeaderCellDef> Profesional </th>
+      <td mat-cell *matCellDef="let element"> {{element.PROFESIONAL}} </td>
+    </ng-container>
 
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Inventos Asignados">
+      <th mat-header-cell *matHeaderCellDef> Inventos Asignados </th>
+      <td mat-cell *matCellDef="let element"> {{element.INVENTOS_ASIGNADOS}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+                 [length]="dataSource?.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="50"
+                 [pageSizeOptions]="[25, 50, 100, 250]"
+                  showFirstLastButtons>
+  </mat-paginator>
 </div>

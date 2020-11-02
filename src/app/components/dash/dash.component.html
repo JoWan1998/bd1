@@ -1,7 +1,8 @@
 
+<!--
   <div class="grid-container">
     <mat-grid-list cols="{{ ( cards | async )?.columns }}" rowHeight="200px">
-      <!--Mini Cards-->
+
       <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols"
                      [rowspan]="( cards | async )?.miniCard.rows">
         <app-card>
@@ -50,7 +51,7 @@
           </div>
         </app-card>
       </mat-grid-tile>
-      <!--info-->
+
       <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
         <app-card>
           <ngb-carousel *ngIf="images">
@@ -78,24 +79,116 @@
           <app-weather></app-weather>
         </app-card>
       </mat-grid-tile>
-      <!--Charts-->
-
-      <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
-        <app-card title="System Data">
-          <app-data-system></app-data-system>
-        </app-card>
-      </mat-grid-tile>
-      <mat-grid-tile  [colspan]="( cards | async )?.chart.cols"
-                      [rowspan]="( cards | async )?.chart.rows">
-        <app-card title="Top 5 Investigadores -Inventos Asignados-">
-          <app-top5-investigadores></app-top5-investigadores>
-        </app-card>
-      </mat-grid-tile>
-      <mat-grid-tile  [colspan]="( cards | async )?.chart.cols"
-                      [rowspan]="( cards | async )?.chart.rows">
-        <app-card title="Areas Territoriales -Grupos Inicial-">
-          <app-areas-territoriales></app-areas-territoriales>
-        </app-card>
-      </mat-grid-tile>
     </mat-grid-list>
   </div>
+-->
+
+<div class="navbar">
+  <mat-toolbar color="primary" class="text-light" style="background: #0a1821;">
+    <mat-toolbar-row >
+      <a *ngFor="let dato of data" mat-list-item [routerLink]="''+dato.url+''"> <span [class]="(dato.active)?'badge badge-pill badge-success':'badge badge-pill badge-info'">{{dato.valor | titlecase}}</span>&nbsp;<span [hidden]="dato.active" class="badge badge-light">&nbsp;/&nbsp;</span>&nbsp;</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div class="grid-container">
+  <mat-grid-list cols="{{ ( cards | async )?.columns }}" rowHeight="200px">
+    <mat-grid-tile  [colspan]="( cards | async )?.miniCard.cols"
+                   [rowspan]="( cards | async )?.miniCard.rows">
+      <app-mini-card [title]="'Inventores Registrados'" [value]="Inventores.length" [icon]="'account_circle'"></app-mini-card>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cards | async )?.miniCard.cols"
+                    [rowspan]="( cards | async )?.miniCard.rows">
+      <app-mini-card [title]="'Inventos Registrados'" [value]="Inventos.length" [icon]="'build'"></app-mini-card>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="( cards | async )?.miniCard.cols"
+                    [rowspan]="( cards | async )?.miniCard.rows">
+      <app-mini-card [title]="'Investigadores Afiliados'" [value]="Investigadores.length" [icon]="'assignment_ind'"></app-mini-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile  [colspan]="( cards | async )?.miniCard.cols"
+                    [rowspan]="( cards | async )?.miniCard.rows">
+      <app-mini-card [title]="'Paises Afiliados'" [value]="Paises.length" [icon]="'language'"></app-mini-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <app-cardlist></app-cardlist>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <app-weather-v1></app-weather-v1>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.blog.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <div class="container-fluid">
+        <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
+          <figure>
+            <div class="media"></div>
+            <figcaption>
+              <svg viewBox="0 0 200 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <mask id="mask" x="0" y="0" width="100%" height="100%">
+                    <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                    <text class="title" dx="50%" dy="2.5em">FACULTAD</text>
+                    <text class="title" dx="50%" dy="3.5em">DE</text>
+                    <text class="title" dx="50%" dy="4.5em">INGENIERIA</text>
+                  </mask>
+                </defs>
+                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+              </svg>
+              <div class="body">
+                <p>UNIVERSIDAD DE SAN CARLOS DE GUATEMALA</p>
+              </div>
+            </figcaption><a href="#"></a>
+          </figure>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <div class="container-fluid">
+        <div class="col col-md-auto col-sm-auto col-lg-auto">
+          <app-card1 title="Areas Territoriales">
+            <app-areas-territoriales></app-areas-territoriales>
+          </app-card1>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <div class="container-fluid">
+        <div class="col col-md-auto col-sm-auto col-lg-auto">
+          <app-card2 title="Top 5 - Investigadores">
+            <app-top5-investigadores></app-top5-investigadores>
+          </app-card2>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <div class="container-fluid">
+        <div class="col col-md-auto col-sm-auto col-lg-auto">
+          <app-card3 title="Data System">
+            <app-data-system></app-data-system>
+          </app-card3>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols"
+                   [rowspan]="( cards | async )?.chart.rows">
+      <app-card title="Inventos Asignados">
+        <app-consulta1></app-consulta1>
+      </app-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+
+

@@ -5,6 +5,7 @@ import {ApiService} from '../../services/api.service';
 import {MatCalendar} from '@angular/material/datepicker';
 import {Moment} from 'moment';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-dash',
@@ -28,6 +29,8 @@ export class DashComponent implements OnInit{
           miniCard: { cols: 1, rows: 1 },
           chart: { cols: 1, rows: 2 },
           table: { cols: 1, rows: 4 },
+          blog: { cols: 1, rows: 3 },
+          bigblog: {cols: 1, rows: 3}
         };
       }
 
@@ -36,11 +39,18 @@ export class DashComponent implements OnInit{
         miniCard: { cols: 1, rows: 1 },
         chart: { cols: 2, rows: 2 },
         table: { cols: 4, rows: 4 },
+        blog: { cols: 2, rows: 3 },
+        bigblog: {cols: 4, rows: 3}
       };
     })
   );
+  href: string;
+  val: any[];
+  data: any[];
+  url: string;
 
-  constructor(private breakpointObserver: BreakpointObserver, private restApi: ApiService, config: NgbCarouselConfig) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private breakpointObserver: BreakpointObserver, private restApi: ApiService, config: NgbCarouselConfig, private route: ActivatedRoute, private router: Router) {
     // customize default values of carousels used by this component tree
     config.interval = 10000;
     config.wrap = false;
@@ -54,8 +64,20 @@ export class DashComponent implements OnInit{
     this.loadInvestigadores();
     this.loadPaises();
     this.loadInventores();
+    this.data = [];
+    this.url = '';
+    this.href = this.router.url;
+    this.val = this.href.split('/');
+    // tslint:disable-next-line:prefer-for-of
+    this.data.push({valor: this.val[1], url: `/${this.val[1]}`, active: false});
+    this.url += `/${this.val[1]}/`;
+    for (let m = 2; m < (this.val.length - 1); m++)
+    {
+      this.data.push({valor: ' ' + this.val[m], url: `${this.url}${this.val[m]}`, active: false});
+      this.url += `${this.val[m]}/`;
+    }
+    this.data.push({valor: ' ' + this.val[this.val.length - 1], url: `${this.url}${this.val[this.val.length - 1]}`, active: true});
   }
-
 
 
   // tslint:disable-next-line:typedef

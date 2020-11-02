@@ -1,51 +1,27 @@
-<div id="back">
-  <div class="backRight"></div>
-  <div class="backLeft"></div>
-</div>
-<div id="slideBox">
-  <div class="topLayer">
-    <div class="right">
-      <div class="content">
-        <div class="form-structor">
-          <div class="signup">
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+
+      <form class="login100-form validate-form">
+
+          <div class="signup" style="font-weight: bold">
             <h2 class="form-title" id="signup"><b>Iniciar Sesion</b></h2>
             <div class="form-holder">
-              <mat-accordion class="example-headers-align" multi>
-                <mat-expansion-panel>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Username
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
-                  <mat-form-field>
-                    <mat-label>Enter your User</mat-label>
-                    <input matInput placeholder="admin" #user>
-                  </mat-form-field>
-                </mat-expansion-panel>
-                <mat-expansion-panel>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Password
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
-                  <mat-form-field>
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput placeholder="****" [type]="hide ? 'password' : 'text'" #pass>
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                  </mat-form-field>
-                </mat-expansion-panel>
-              </mat-accordion>
+              <input type="email" class="input" placeholder="Email" #user/>
+              <input type="password" class="input" placeholder="Password" #pass/>
             </div>
-            <button class="submit-btn" (click)="Login(user,pass)">Log in</button>
+            <button class="submit-btn" (click)="Login(user,pass)">INICIAR SESION</button>
+            <a class="txt1">Photo by Jessica Lewis from Pexels</a>
           </div>
           <div class="login slide-up">
+
             <div class="center">
-              <h2 class="form-title" id="login">or <b><a [routerLink]="'/main/G'">Invitado</a></b></h2>
+              <ngb-alert *ngIf="successMessage" type="danger" (close)="successMessage = ''" style="opacity: 1;">{{ successMessage }}</ngb-alert>
+              <h2 class="form-title" id="login">or <b><a [routerLink]="'/Menu'">Invitado</a></b></h2>
             </div>
           </div>
-        </div>
+      </form>
+      <div class="login100-more">
       </div>
     </div>
   </div>

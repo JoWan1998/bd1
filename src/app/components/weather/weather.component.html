@@ -35,10 +35,12 @@
       <div class="card">
         <img src="../../../assets/img/guate1.jpg"/>
     <div class="content">
-      <p class="city-name grey">{{Clima.location.region}}</p>
-      <p class="city-name grey">{{Clima.location.name}}</p>
+      <p class="city-name">{{Clima.location.region}}</p>
+      <p class="city-name">{{Clima.location.name}}</p>
       <div class="details">
-        <p>{{Clima.location.localtime}} | {{Clima.current.condition.text}}  | {{Clima.current.temp_c}} °</p>
+        <p>{{Clima.location.localtime}}
+          <br><span class="badge badge-info">{{Clima.current.condition.text}}</span>
+        <br>{{Clima.current.temp_c}} °</p>
       </div>
     </div>
   </div>
