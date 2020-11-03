@@ -7,123 +7,141 @@
 
 <div class="grid-container">
   <mat-grid-list cols="{{ ( cards | async )?.columns }}" rowHeight="200px">
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 1">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar cada profesional, y el número de inventos que tiene asignados ordenados de
+mayor a menor" numero="01" title="Consulta 1">
         <app-consulta1></app-consulta1>
       </app-cardv>
     </mat-grid-tile>
 
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 2">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar los países de cada continente y el número de preguntas que han contestado de
+cualquier encuesta. Si hay países que no han contestado ninguna encuesta, igual debe
+aparecer su nombre el la lista" numero="02" title="Consulta 2">
         <app-consulta2></app-consulta2>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 3">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los países que no tengan ningún inventor y que no tengan ninguna frontera
+con otro país ordenados por su área." numero="03" title="Consulta 3">
         <app-consulta3></app-consulta3>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 4">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre de cada jefe seguido de todos sus subalternos, para todos los
+profesionales ordenados por el jefe alfabéticamente." numero="04" title="Consulta 4">
         <app-consulta4></app-consulta4>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 5">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los profesionales, y su salario cuyo salario es mayor al promedio del
+salario de los profesionales en su misma área." numero="05" title="Consulta 5">
         <app-consulta5></app-consulta5>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 6">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar los nombres de los países que han contestado encuestas, ordenados del país que
+más aciertos ha tenido hasta el que menos aciertos ha tenido." numero="06" title="Consulta 6">
         <app-consulta6></app-consulta6>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 7">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar los inventos documentados por todos los profesionales expertos en Óptica." numero="07" title="Consulta 7">
         <app-consulta7></app-consulta7>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 8">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar la suma del área de todos los países agrupados por la inicial de su nombre." numero="08" title="Consulta 8">
         <app-consulta8></app-consulta8>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 9">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los inventores y sus inventos cuyo nombre del inventor inicie con las
+letras BE." numero="09" title="Consulta 9">
         <app-consulta9></app-consulta9>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 10">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre de todos los inventores que Inicien con B y terminen con r o con n que
+tengan inventos del siglo 19" numero="10" title="Consulta 10">
         <app-consulta10></app-consulta10>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 11">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre del país y el área de todos los países que tienen mas de siete
+fronteras ordenarlos por el de mayor área" numero="11" title="Consulta 11">
         <app-consulta11></app-consulta11>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 12">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los inventos de cuatro letras que inicien con L" numero="12" title="Consulta 12">
         <app-consulta12></app-consulta12>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 13">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre del profesional, su salario, su comisión y el total de salario (sueldo
+mas comisión) de todos los profesionales con comisión mayor que el 25% de su salario." numero="13" title="Consulta 13">
         <app-consulta13></app-consulta13>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 14">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar cada encuesta y el número de países que las han contestado, ordenadas de mayor
+a menor." numero="14" title="Consulta 14">
         <app-consulta14></app-consulta14>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 15">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar los países cuya
+población sea mayor a la población de los países
+centroamericanos juntos." numero="15" title="Consulta 15">
         <app-consulta15></app-consulta15>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 16">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los Jefes de cada profesional que no este en el mismo departamento que el
+del profesional que atiende al inventor Pasteur." numero="16" title="Consulta 16">
         <app-consulta16></app-consulta16>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 17">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre de todos los inventos inventados el mismo año que BENZ invento
+algún invento." numero="17" title="Consulta 17">
         <app-consulta17></app-consulta17>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 18">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar los nombres y el número de habitantes de todas las islas que tiene un área
+mayor o igual al área de Japón" numero="18" title="Consulta 18">
         <app-consulta18></app-consulta18>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta 19">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar todos los países con el nombre de cada país con el cual tiene una frontera." numero="19" title="Consulta 19">
         <app-consulta19></app-consulta19>
       </app-cardv>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="( cards | async )?.miniCard.cols" [rowspan]="( cards | async )?.chart.rows">
-      <app-cardv title="Consulta20">
+    <mat-grid-tile [colspan]="( cards | async )?.chart.cols" [rowspan]="( cards | async )?.chart.rows">
+      <app-cardv description="Desplegar el nombre del profesional su salario y su comisión de los empleados cuyo salario
+es mayor que el doble de su comisión." numero="20" title="Consulta20">
         <app-consulta20></app-consulta20>
       </app-cardv>
     </mat-grid-tile>

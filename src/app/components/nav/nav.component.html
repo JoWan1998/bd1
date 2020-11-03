@@ -6,22 +6,11 @@
     <h1>BD1</h1>
 
     <span class="example-spacer"></span>
-
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
-      <figure class="story_shape">
-        <img [src]="image" class="story_img">
-        <figcaption class="story_caption">Jw</figcaption>
-      </figure>
-    </button>
-    <mat-menu #menu="matMenu" xPosition="before">
-      <div>
-        <button mat-menu-item [routerLink]="'/Menu/'+'Dashboard'"> DASHBOARD </button>
-        <button mat-menu-item [routerLink]="'/Menu/'+'/'+'Consultas'">CONSULTAS</button>
-        <button mat-menu-item [routerLink]="'/Menu/'+'/'+'Encuestas'">ENCUESTAS</button>
-        <button mat-menu-item [hidden]="!admin" [routerLink]="'/Menu/'+'/'+'Encuestas'">ADMINISTRADOR</button>
-        <button mat-menu-item [routerLink]="'/'">LOGOUT</button>
-      </div>
-    </mat-menu>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <img matListAvatar [src]="yuya" alt="...">
+      </mat-list-item>
+    </mat-list>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -30,9 +19,16 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === true">
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <img matListAvatar [src]="yuya" alt="...">
+        <strong>&nbsp;UNIVERSIDAD DE SAN CARLOS DE GUATEMALA</strong>
+      </mat-list-item>
+    </mat-list>
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a *ngFor="let item of Items" mat-list-item [routerLink]="'/Menu/'+item"> {{item | titlecase}} </a>
+      <a mat-list-item [routerLink]="'/'">Salir</a>
     </mat-nav-list>
     <!--<div class="container">
       <div class="row">

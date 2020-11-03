@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class NavComponent implements OnInit{
   constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {
     this.image = './assets/img/profile.png';
+    this.yuya = './assets/img/gatito.jpg';
   }
   admin = false;
   id: string;
@@ -29,6 +30,8 @@ export class NavComponent implements OnInit{
   data: any[];
   url: string;
   image: string;
+  yuya: string;
+
   ngOnInit(): void {
     this.data = [];
     this.url = '';

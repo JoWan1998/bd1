@@ -70,6 +70,8 @@ import { MiniCardComponent } from './components/mini-card/mini-card.component';
 import { CardvComponent } from './components/cardv/cardv.component';
 import { CardlistComponent } from './components/cardlist/cardlist.component';
 import { WeatherV1Component } from './components/weather-v1/weather-v1.component';
+import { InfoConsultaComponent } from './components/info-consulta/info-consulta.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -117,36 +119,38 @@ import { WeatherV1Component } from './components/weather-v1/weather-v1.component
     MiniCardComponent,
     CardvComponent,
     CardlistComponent,
-    WeatherV1Component
+    WeatherV1Component,
+    InfoConsultaComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    HttpClientModule,
-    AngularMaterialModule,
-    FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatExpansionModule,
-    MatInputModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    ChartsModule,
-    MatChipsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgbModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        HttpClientModule,
+        AngularMaterialModule,
+        FlexLayoutModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatExpansionModule,
+        MatInputModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatGridListModule,
+        MatCardModule,
+        MatMenuModule,
+        ChartsModule,
+        MatChipsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatDialogModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
